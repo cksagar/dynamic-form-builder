@@ -6,11 +6,10 @@ This project is a dynamic form builder built with React and Zustand. It renders 
 ## Features
 - **Dynamic Schema Loading:** The form schema is fetched from a remote JSON endpoint, not hardcoded.
 - **Supported Field Types:** Text, Number, Select, Checkbox, and Date fields.
-- **Validation:** Supports required, min, max, minLength, and pattern validation rules. Validation errors are displayed under each field.
+- **Validation:** Supports validation rules. mentioned in the API. Validation errors are displayed under each field.
 - **Conditional Fields:** Fields can be shown/hidden based on the value of other fields (dependency logic).
 - **State Management:** Uses Zustand for robust and scalable form state management.
 - **User Feedback:** Displays submitted form data after successful submission.
-- **No React Warnings:** All list children have unique keys; no React key warnings.
 
 ## How to Run
 1. **Install dependencies:**
@@ -22,20 +21,4 @@ This project is a dynamic form builder built with React and Zustand. It renders 
    npm run dev
    ```
 3. **Open your browser:**
-   Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
-
-## Testing the Assignment
-- The form will load the schema from the provided API and render the "Employee Registration" form.
-- Try filling out the form, testing required fields, minLength, and conditional logic (e.g., "Primary Programming Language" only appears if "Department" is "Engineering").
-- On submit, the entered data will be displayed below the form.
-
-## Submission Ready
-This project fulfills all assignment requirements:
-- Dynamic rendering from API schema
-- All field types and validation
-- Conditional logic
-- State management
-- Error handling and user feedback
-
----
-If you need further documentation or code comments, let me know!
+   Visit [http://localhost:5173](http://localhost:5173)
