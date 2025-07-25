@@ -211,7 +211,24 @@ const DynamicForm: React.FC<DynamicFormProps> = ({ schema }) => {
       {submittedData && !loading && (
         <div className="max-w-lg mx-auto mt-6 p-4 border rounded bg-gray-50">
           <h3 className="font-bold mb-2">Submitted Data:</h3>
-          <pre className="bg-white p-2 rounded">{JSON.stringify(submittedData, null, 2)}</pre>
+          <table className="w-full text-left border-collapse">
+            <tbody>
+              {Object.entries(submittedData).map(([key, value]) => (
+                <tr key={key} className="border-b">
+                  <td className="py-2 px-3 font-semibold capitalize">{key.replace(/([A-Z])/g, ' $1')}</td>
+                  <td className="py-2 px-3">
+                    {typeof value === 'boolean'
+                      ? value ? 'Yes' : 'No'
+                      : value === '' || value === null || value === undefined
+                        ? <span className="text-gray-400 italic">N/A</span>
+                        : typeof value === 'string' || typeof value === 'number'
+                          ? value
+                          : String(value)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
